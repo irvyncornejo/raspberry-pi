@@ -18,11 +18,11 @@ def leerCanal(canal):#recuerda que hablamos del canal del integrado
     return data
 
 #Definimos el valor del canal de los sensores
-flex1 = 0
+flex1 = 2
 
 
 #Definimos el tiempo de retardo entre lectura de los datos
-delay = 1
+delay = 0.25
 
 
 
@@ -31,6 +31,6 @@ while True:
     flex_uno = leerCanal(flex1)
     #imprimimos los resultados
     print('____________________________________________')
-    print('Flex Uno: {}'.format( flex_uno)
+    print('Flex Uno: {}'.format( flex_uno))
     #tiempo de espera para poder repetir el loop
     time.sleep(delay)
