@@ -2,11 +2,14 @@
 import spidev
 import time
 import os
+from gpiozero import Servo
 
 #Abrimos el bus SPI
 spi = spidev.SpiDev()#declaramos el objeto 
 spi.open(0,0)#SPIO
 spi.max_speed_hz= 1000000#declaramos la velocidad de trasnmision 1Mhz
+
+servo = Servo(25)
 
 #Funcion para leer los datos por el protocolo SPI del chip MCP3008
 #El integrado tiene 8 canales para el ingreso de la señal. Pero para fines del programa
@@ -24,20 +27,23 @@ def conversionVolts(data, digitos):
 
 def posicionX(ejex_posicion):
     posicion = ''
-    if(ejex_posicion > 500):
+    if(ejex_posicion > 510):
         posicion = 'arriba'
+        servo.min()
         return posicion
     
     elif(ejex_posicion < 430):
         posicion = 'abajo'
+        servo.max()
         return posicion
     else:
         posicion = 'centro'
+        servo.mid()
         return posicion 
 
 #Definimos el valor del canal de los sensores
-ejex_canal = 0
-ejey_canal = 1
+ejex_canal = 1
+ejey_canal = 2
 
 #Definimos el tiempo de retardo entre lectura de los datos
 delay = 1

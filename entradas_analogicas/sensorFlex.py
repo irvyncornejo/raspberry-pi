@@ -18,7 +18,7 @@ def leerCanal(canal):#recuerda que hablamos del canal del integrado
     return data
 
 #Definimos el valor del canal de los sensores
-flex1 = 2
+flex1 = 0
 
 
 #Definimos el tiempo de retardo entre lectura de los datos
