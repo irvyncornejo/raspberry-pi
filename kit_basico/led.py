@@ -1,7 +1,7 @@
 from gpiozero import LED
 from time import sleep
 
-led0 = LED(25)#Dentro de los parentesis declaramos el GPIO al que está conectado el led
+led0 = LED(17)#Dentro de los parentesis declaramos el GPIO al que está conectado el led
 
 """
 led1 = LED(17)

@@ -2,14 +2,14 @@ from gpiozero import DistanceSensor, LED
 from time import sleep
 
 #La máxima distancia que puedemos detectar en nuestra raspberry es de 1m
-sensorUltrasonico = DistanceSensor(echo=23, trigger=24)#ECHO -->  23 | TRIGGER --> 24
+sensorUltrasonico = DistanceSensor(echo=16 , trigger=12)#ECHO -->  23 | TRIGGER --> 24
 
 def conversionCm(sensorUltrasonicoMetros):
     centimetros = (sensorUltrasonicoMetros * 100)#coversión de metros a cm
     centimetrosRedondeo = round(centimetros, 3) #redondeo a 3 decimales
     return centimetrosRedondeo
     
-led = LED(25)
+led = LED(18)
 
 while True:
     if __name__ == '__main__':
