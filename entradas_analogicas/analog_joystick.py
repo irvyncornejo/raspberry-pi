@@ -42,7 +42,7 @@ def posicionX(ejex_posicion):
         return posicion 
 
 #Definimos el valor del canal de los sensores
-ejex_canal = 1
+ejex_canal = 0
 ejey_canal = 2
 
 #Definimos el tiempo de retardo entre lectura de los datos

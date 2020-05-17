@@ -1,7 +1,9 @@
 from gpiozero import LED
 from time import sleep
 
-led0 = LED(17)#Dentro de los parentesis declaramos el GPIO al que está conectado el led
+relays = [4,5,6,17]
+
+#led0 = LED()Dentro de los parentesis declaramos el GPIO al que está conectado el led
 
 """
 led1 = LED(17)
@@ -19,14 +21,21 @@ def estadoLeds(estado):
         led0.off()
     
 
-while True:
-    print('Bienvenido recuerde que puede apagar o encender los leds ')
-    
-    if __name__ == '__main__':
+if __name__ == '__main__':
+    while True:
+        print('Bienvenido recuerde que puede apagar o encender los leds ')
+        for i in relays:
+            led0 = LED(i)
+            led0.on()
+            sleep(0.5)
+        for i in  relays:
+            led0 = LED(i)
+            led0.off()
+            sleep(0.5)
         
-        estado = input('ingrese el estado de los leds: ')
+        """estado = input('ingrese el estado de los leds: ')
         estadoLeds(estado)
-        """led0.on()
+        led0.on()
         sleep(1.5)
         led0.off()
         sleep(1.5)"""

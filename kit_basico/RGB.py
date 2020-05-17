@@ -31,7 +31,6 @@ def leerCanal(canal):#recuerda que hablamos del canal del integrado
 
 
 def coloresBase():
-    
     #Todo apagados
     led.color = (1, 1, 1)
     sleep(1)
